@@ -135,6 +135,7 @@ Facter.add("virtual") do
       next "vmware"     if lines.any? {|l| l =~ /VMware/ }
       next "virtualbox" if lines.any? {|l| l =~ /VirtualBox/ }
       next "xenhvm"     if lines.any? {|l| l =~ /HVM domU/ }
+      next "gce"        if lines.any? {|l| l =~ /Product Name: Google/ }
       next "hyperv"     if lines.any? {|l| l =~ /Product Name: Virtual Machine/ }
       next "rhev"       if lines.any? {|l| l =~ /Product Name: RHEV Hypervisor/ }
       next "ovirt"      if lines.any? {|l| l =~ /Product Name: oVirt Node/ }
